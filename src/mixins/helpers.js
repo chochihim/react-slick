@@ -255,6 +255,8 @@ var helpers = {
         if (this.props.afterChange) {
           this.props.afterChange(currentSlide);
         }
+
+        this.autoPlay();
       });
 
     } else {
@@ -272,6 +274,8 @@ var helpers = {
           this.props.afterChange(currentSlide);
         }
         delete this.animationEndCallback;
+
+        this.autoPlay();
       };
 
       this.setState({
@@ -283,8 +287,6 @@ var helpers = {
       });
 
     }
-
-    this.autoPlay();
   },
   swipeDirection: function (touchObject) {
     var xDist, yDist, r, swipeAngle;
